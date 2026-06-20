@@ -35,5 +35,12 @@ $empleados = [
         "puesto" => "Mesero",
         "estado" => "Activo",
         "horario" => "Lun. a Dom. | 9:00 a 18:00"
+    ],
+
+     [
+        "nombre" => "Martin Gomez",
+        "puesto" => "Encargado",
+        "estado" => "Activo",
+        "horario" => "Lun. a Dom. | 9:00 a 18:00"
     ]
 ];
