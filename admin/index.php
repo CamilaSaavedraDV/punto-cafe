@@ -1,7 +1,7 @@
 <?php
 
 require 'funciones.php';
-require 'empleados.php';
+$empleados = obtenerEmpleados();
 
 $usuarioLogueado = [
     "nombre" => "Milagros",
@@ -32,9 +32,9 @@ $usuarioLogueado = [
             </div>
 
             <div class="menu">
-                <button class="empledos">
-                    Empleados
-                </button>
+                <a href="index.php" class="btn-empleados">
+                    Empleados 
+                </a>
             </div>
 
             <div class="usuario">
@@ -91,52 +91,46 @@ $usuarioLogueado = [
 
                 <tbody>
 
-                    <?php foreach ($empleados as $empleado): ?>
+                <?php foreach ($empleados as $empleado): ?>
 
-                        <tr>
+                <tr>
 
-                            <td>
-                                <?= $empleado["nombre"] ?>
-                            </td>
+                    <td><?= $empleado["nombre"] ?></td>
 
-                            <td>
-                                <?= $empleado["puesto"] ?>
-                            </td>
+                    <td><?= $empleado["puesto"] ?></td>
 
-                            <td>
+                    <td>
 
-                                <?php
-                                mostrarSelectEstado(
-                                    $empleado["estado"],
-                                    $estados
-                                );
-                                ?>
+                        <?php
+                        mostrarSelectEstado(
+                            $empleado["estado"],
+                            $estados
+                        );
+                        ?>
 
-                            </td>
+                    </td>
 
-                            <td>
-                                <?= $empleado["horario"] ?>
-                            </td>
+                    <td><?= $empleado["horario"] ?></td>
 
-                            <td>
+                    <td>
 
-                                <button class="btn-editar">
-                                    Editar
-                                </button>
+                        <a href="editar-empleado.php?id=<?=$empleado['id']?>" class="btn-editar">
+                            Editar
+                        </a>
 
-                            </td>
+                    </td>
 
-                        </tr>
+                </tr>
 
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
 
                 </tbody>
 
             </table>
 
-            <button class="btn-agregar">
+            <a href="agregar-empleado.php" class="btn-agregar">
                 +
-            </button>
+            </a>
 
         </section>
 

@@ -1,0 +1,50 @@
+[
+
+    {
+        "id": 1,
+        "nombre": "Marcos Baez",
+        "puesto": "Cocinero",
+        "estado": "Activo",
+        "horario": "Lun. a Mie. | 9:00 a 18:00"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Mariela Diaz",
+        "puesto": "Cocinera",
+        "estado": "Activo",
+        "horario": "Jue. y Dom. | 9:00 a 18:00"
+    },
+
+    {
+        "id": 3,
+        "nombre": "Valentina Martinez",
+        "puesto": "Recepcionista",
+        "estado": "Activo",
+        "horario": "Lun. a Dom. | 9:00 a 18:00"
+    },
+
+    {
+        "id": 4,
+        "nombre": "Violeta Paez",
+        "puesto": "Mesera",
+        "estado": "Licencia",
+        "horario": "Lun. a Dom. | 9:00 a 18:00"
+    },
+
+    {
+        "id": 5,
+        "nombre": "Nicolas Gonzalez",
+        "puesto": "Mesero",
+        "estado": "Activo",
+        "horario": "Lun. a Dom. | 9:00 a 18:00"
+    },
+
+     {
+        "id": 6,
+        "nombre": "Martin Gomez",
+        "puesto": "Encargado",
+        "estado": "Activo",
+        "horario": "Lun. a Dom. | 9:00 a 18:00"
+    }
+]
