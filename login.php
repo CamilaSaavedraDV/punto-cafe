@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
     <nav class="navbar">
-        <a href="index.php" class="navbar-brand">
+        <a href="singup.php" class="navbar-brand">
             <span class="brand-icon">☕</span>
             <span class="brand-text">
                 <span class="brand-name">PUNTO CAFÉ</span>
             </span>
         </a>
-        <a href="index.php" class="navbar-login">
+        <a href="singup.php" class="navbar-login">
             <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="4"/>
                 <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
 
                 <div class="card-footer">
-                    ¿No tenes cuenta? <a href="index.php">Registrarse</a>
+                    ¿No tenes cuenta? <a href="singup.php">Registrarse</a>
                 </div>
 
             </form>

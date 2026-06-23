@@ -1,0 +1,7 @@
+[
+  { "nombre": "Porción de torta", "stock": 26 },
+  { "nombre": "Medialuna", "stock": 150 },
+  { "nombre": "Matcha Latte", "stock": 109 },
+  { "nombre": "Latte", "stock": 110 },
+  { "nombre": "Avocado Toast", "stock": 10 }
+]

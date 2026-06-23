@@ -1,0 +1,35 @@
+[
+  {
+    "id": 21,
+    "mesa": 5,
+    "estado": "pendiente",
+    "creado_hace": "3 min",
+    "items": [
+      { "nombre": "Porción de torta", "cantidad": 1 },
+      { "nombre": "Medialuna", "cantidad": 3 },
+      { "nombre": "Matcha Latte", "cantidad": 2 }
+    ]
+  },
+
+  {
+    "id": 20,
+    "mesa": 2,
+    "estado": "en_preparacion",
+    "creado_hace": "8 min",
+    "items": [
+      { "nombre": "Latte", "cantidad": 2 },
+      { "nombre": "Matcha Latte", "cantidad": 1 }
+    ]
+  },
+
+  {
+    "id": 19,
+    "mesa": 7,
+    "estado": "disponible",
+    "creado_hace": "15 min",
+    "items": [
+      { "nombre": "Latte", "cantidad": 1 },
+      { "nombre": "Medialuna", "cantidad": 2 }
+    ]
+  }
+]

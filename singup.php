@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <p class="card-subtitle">Registrate para realizar pedidos</p>
             </div>
 
-            <form method="POST" action="index.php">
+            <form method="POST" action="singup.php" autocomplete="off">
 
                 <div class="form-group">
                     <label class="form-label">Nombre y apellido</label>
