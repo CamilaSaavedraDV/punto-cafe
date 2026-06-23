@@ -1,16 +1,40 @@
 <?php
+
+require "usuarios.php";
+
 $errores = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email    = trim($_POST["email"]    ?? "");
+
+    $email    = trim($_POST["email"] ?? "");
     $password = trim($_POST["password"] ?? "");
 
-    if (empty($email))    $errores["email"]    = "Este campo es obligatorio.";
+    if (empty($email))    $errores["email"] = "Este campo es obligatorio.";
     if (empty($password)) $errores["password"] = "Este campo es obligatorio.";
 
     if (empty($errores)) {
-        header("Location: dashboard.php");
-        exit;
+
+        $usuarios = obtenerUsuarios();
+        $usuarioEncontrado = null;
+
+        foreach ($usuarios as $u) {
+            if ($u["email"] === $email && $u["password"] === $password) {
+                $usuarioEncontrado = $u;
+                break;
+            }
+        }
+
+        if ($usuarioEncontrado) {
+
+            session_start();
+            $_SESSION["usuario"] = $usuarioEncontrado;
+
+            header("Location: " . $usuarioEncontrado["vista"]);
+            exit;
+
+        } else {
+            $errores["login"] = "Credenciales incorrectas.";
+        }
     }
 }
 ?>
