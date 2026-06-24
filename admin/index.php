@@ -1,6 +1,7 @@
 <?php
 
 require 'funciones.php';
+
 $empleados = obtenerEmpleados();
 
 $usuarioLogueado = [
@@ -23,118 +24,165 @@ $usuarioLogueado = [
 
 <body>
 
-    <header>
+    <nav class="navbar">
 
-        <nav class="navbar">
+        <div class="logo">
+            ☕ PUNTO CAFÉ
+        </div>
 
-            <div class="logo">
-                Punto Café
-            </div>
+        <div class="navbar-center">
 
-            <div class="menu">
-                <a href="index.php" class="btn-empleados">
-                    Empleados 
-                </a>
-            </div>
+            <a href="index.php" class="nav-link active">
+                Empleados
+            </a>
 
-            <div class="usuario">
+        </div>
 
-                <div class="estado-local">
-                    Abierto ahora
+        <div class="navbar-right">
+
+            <span class="status-badge">
+                <span class="status-dot"></span>
+                Abierto ahora
+            </span>
+
+            <div class="user-info">
+
+                <div class="user-avatar">
+                    👤
                 </div>
 
-                <div class="perfil">
-                    <p>
-                        Hola,
-                        <?= $usuarioLogueado["nombre"] ?>
-                    </p>
+                <div class="user-text">
+                    <span class="user-name">
+                        Hola, <?= $usuarioLogueado["nombre"] ?>
+                    </span>
 
-                    <span>
+                    <span class="user-role">
                         <?= $usuarioLogueado["rol"] ?>
                     </span>
                 </div>
 
             </div>
 
-        </nav>
+        </div>
 
-    </header>
+    </nav>
 
+    <main class="page">
 
-    <main>
+        <div class="panel">
 
-        <section class="titulo">
+            <div class="panel-header">
 
-            <h1>Empleados</h1>
+                <span class="panel-icon">
+                    👥
+                </span>
 
-            <p>
-                Gestioná el horario laboral de tus empleados.
-            </p>
+                <div>
 
-        </section>
+                    <h2 class="panel-title">
+                        Empleados
+                    </h2>
 
-        <section class="tabla-empleados">
+                    <p class="panel-subtitle">
+                        Gestioná el horario laboral de tus empleados.
+                    </p>
 
-            <table>
+                </div>
 
-                <thead>
+            </div>
 
-                    <tr>
-                        <th>Empleado</th>
-                        <th>Puesto</th>
-                        <th>Estado</th>
-                        <th>Horario</th>
-                        <th>Acciones</th>
-                    </tr>
+            <div class="table-wrapper">
 
-                </thead>
+                <table>
 
-                <tbody>
+                    <thead>
 
-                <?php foreach ($empleados as $empleado): ?>
+                        <tr>
+                            <th>Empleado</th>
+                            <th>Puesto</th>
+                            <th>Estado</th>
+                            <th>Horario</th>
+                            <th>Acciones</th>
+                        </tr>
 
-                <tr>
+                    </thead>
 
-                    <td><?= $empleado["nombre"] ?></td>
+                    <tbody>
 
-                    <td><?= $empleado["puesto"] ?></td>
+                        <?php foreach ($empleados as $empleado): ?>
 
-                    <td>
+                            <tr>
 
-                        <?php
-                        mostrarSelectEstado(
-                            $empleado["estado"],
-                            $estados
-                        );
-                        ?>
+                                <td><?= $empleado["nombre"] ?></td>
 
-                    </td>
+                                <td><?= $empleado["puesto"] ?></td>
 
-                    <td><?= $empleado["horario"] ?></td>
+                                <td>
 
-                    <td>
+                                    <?php
+                                    mostrarSelectEstado(
+                                        $empleado["estado"],
+                                        $estados
+                                    );
+                                    ?>
 
-                        <a href="editar-empleado.php?id=<?=$empleado['id']?>" class="btn-editar">
-                            Editar
-                        </a>
+                                </td>
 
-                    </td>
+                                <td><?= $empleado["horario"] ?></td>
 
-                </tr>
+                                <td>
 
-                <?php endforeach; ?>
+                                    <a href="editar-empleado.php?id=<?= $empleado['id'] ?>" class="btn-edit">
+                                        ✏️
+                                    </a>
 
-                </tbody>
+                                </td>
 
-            </table>
+                            </tr>
 
-            <a href="agregar-empleado.php" class="btn-agregar">
-                +
-            </a>
+                        <?php endforeach; ?>
 
-        </section>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="panel-footer">
+
+                <a href="agregar-empleado.php" class="btn-add">
+                    +
+                </a>
+
+            </div>
+
+        </div>
 
     </main>
+
+
+    <script>
+
+    document.querySelectorAll('.estado').forEach(select => {
+
+        select.addEventListener('change', function() {
+
+            this.classList.remove(
+                'activo',
+                'licencia',
+                'inactivo'
+            );
+
+            this.classList.add(
+                this.value.toLowerCase()
+            );
+
+        });
+
+    });
+
+    </script>
+
 
 </body>
 
