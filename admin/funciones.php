@@ -9,7 +9,9 @@ $estados = [
 
 function mostrarSelectEstado($estadoActual, $estados)
 {
-    echo '<select class="estado-select">';
+    $clase = strtolower($estadoActual);
+
+    echo "<select class='estado $clase'>";
 
     foreach ($estados as $estado) {
 
