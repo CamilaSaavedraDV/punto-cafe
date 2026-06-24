@@ -13,6 +13,7 @@ $tagClasesCocina = [
     "cancelado"      => "tag-cancelled"
 ];
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
