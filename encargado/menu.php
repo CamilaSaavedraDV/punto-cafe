@@ -83,7 +83,7 @@ function formatoPrecio($n) {
         </a>
         <div class="navbar-center">
             <a href="encargado.php" class="nav-link">Reportes</a>
-            <a href="encargado.php" class="nav-link">Stock</a>
+            <a href="#" class="nav-link">Stock</a>
             <a href="menu.php" class="nav-link active">Menu</a>
         </div>
         <div class="navbar-right">
