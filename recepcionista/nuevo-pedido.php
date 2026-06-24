@@ -68,8 +68,8 @@ function formatoPrecio($numero) {
             </span>
         </a>
         <div class="navbar-center">
-            <a href="dashboard.php" class="nav-link active">Pedidos</a>
-            <a href="#" class="nav-link">Mesas</a>
+            <a href="mesas.php" class="nav-link active">Pedidos</a>
+            <a href="./mesas.php" class="nav-link">Mesas</a>
         </div>
         <div class="navbar-right">
             <span class="status-badge">
