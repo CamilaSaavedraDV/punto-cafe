@@ -241,7 +241,7 @@ body {
 }
 
 .form-group label {
-    font-size: 12.5px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--text-dark);
 }
@@ -347,4 +347,12 @@ body {
     color: var(--btn-brown);
     font-weight: 700;
     text-decoration: none;
+}
+
+.error-msg {
+    color: #c62828;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
 }

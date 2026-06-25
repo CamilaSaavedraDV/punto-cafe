@@ -1,7 +1,27 @@
-<?php $usuarioLogueado = [
+<?php
+$usuarioLogueado = [
     "nombre" => "Luz",
     "rol"    => "CLIENTE"
 ];
+
+$errores = [];
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre   = trim($_POST["nombre"] ?? "");
+    $apellido = trim($_POST["apellido"] ?? "");
+    $email    = trim($_POST["email"] ?? "");
+    $reporte  = trim($_POST["reporte"] ?? "");
+
+    if (empty($nombre))   $errores["nombre"] = "* Este campo es obligatorio.";
+    if (empty($apellido)) $errores["apellido"] = "* Este campo es obligatorio.";
+    if (empty($email))    $errores["email"] = "* Este campo es obligatorio.";
+    if (empty($reporte))  $errores["reporte"] = "* Este campo es obligatorio.";
+
+    if (empty($errores)) {
+        header("Location: excelente.php");
+        exit;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punto Café - Reportes</title>
-    <link rel="stylesheet" href="../css/reportes.css">
+    <link rel="stylesheet" href="../css/reportes.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
@@ -22,7 +42,7 @@
             
             <nav class="navbar-center">
                 <a href="#" class="nav-link">Productos</a>
-                <a href="#" class="nav-link">Mis pedidos</a>
+                <a href="mispedidos.php" class="nav-link">Mis pedidos</a>
                 <a href="#" class="nav-link active">Reportes</a>
             </nav>
             
@@ -40,7 +60,6 @@
 
     <main class="page">
         <div class="panel report-panel">
-            
             <div class="panel-content-wrapper">
                 
                 <div class="panel-left-content">
@@ -65,36 +84,48 @@
                             </div>
                         </div>
 
-                        <form action="procesar_reporte.php" method="POST" class="report-form">
+                        <form action="reportes.php" method="POST" class="report-form" novalidate>
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
+                                <?php if (isset($errores["nombre"])): ?>
+                                    <span class="error-msg"><?= $errores["nombre"] ?></span>
+                                <?php endif; ?>
                                 <div class="input-wrapper">
                                     <span class="input-emoji">👤</span>
-                                    <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre" required>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre" value="<?= htmlspecialchars($_POST['nombre'] ?? '') ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="apellido">Apellido</label>
+                                <?php if (isset($errores["apellido"])): ?>
+                                    <span class="error-msg"><?= $errores["apellido"] ?></span>
+                                <?php endif; ?>
                                 <div class="input-wrapper">
                                     <span class="input-emoji">👤</span>
-                                    <input type="text" id="apellido" name="apellido" placeholder="Escribí tu apellido" required>
+                                    <input type="text" id="apellido" name="apellido" placeholder="Escribí tu apellido" value="<?= htmlspecialchars($_POST['apellido'] ?? '') ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
+                                <?php if (isset($errores["email"])): ?>
+                                    <span class="error-msg"><?= $errores["email"] ?></span>
+                                <?php endif; ?>
                                 <div class="input-wrapper">
                                     <span class="input-emoji">✉️</span>
-                                    <input type="email" id="email" name="email" placeholder="Escribí tu email" required>
+                                    <input type="email" id="email" name="email" placeholder="Escribí tu email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="reporte">Reporte</label>
+                                <?php if (isset($errores["reporte"])): ?>
+                                    <span class="error-msg"><?= $errores["reporte"] ?></span>
+                                <?php endif; ?>
                                 <div class="input-wrapper alignment-top">
                                     <span class="input-emoji">💬</span>
-                                    <textarea id="reporte" name="reporte" placeholder="Contanos tu consulta, sugerencia o incidencia..." rows="3" required></textarea>
+                                    <textarea id="reporte" name="reporte" placeholder="Contanos tu consulta, sugerencia o incidencia..." rows="3"><?= htmlspecialchars($_POST['reporte'] ?? '') ?></textarea>
                                 </div>
                             </div>
 
