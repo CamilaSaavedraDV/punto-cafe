@@ -186,7 +186,7 @@ function formatoPrecio($n) {
                 <div class="carrito-metodo-titulo">Elegí tu método de pago</div>
                 <div class="carrito-metodos">
                     <div class="carrito-metodo active">
-                        <img src="../assets/visa.png alt="Visa" style="height:22px">
+                        <img src="../assets/visa.png" alt="Visa" style="height:22px">
                     </div>
                     <div class="carrito-metodo">
                         <img src="../assets/master.webp" alt="Mastercard" style="height:28px">
