@@ -41,9 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             
             <nav class="navbar-center">
-                <a href="#" class="nav-link">Productos</a>
-                <a href="mispedidos.php" class="nav-link">Mis pedidos</a>
-                <a href="#" class="nav-link active">Reportes</a>
+            <a href="productos.php" class="nav-link active">Productos</a>
+            <a href="mispedidos.php" class="nav-link">Mis pedidos</a>
+            <a href="reportes.php" class="nav-link">Reportes</a>
             </nav>
             
             <div class="navbar-right">
