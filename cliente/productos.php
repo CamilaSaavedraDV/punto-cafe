@@ -98,6 +98,7 @@ $totalItems = array_sum(array_column($carrito, "cantidad"));
                 <div class="user-avatar">👤</div>
                 <div class="user-text">
                     <span class="user-name">Hola, <?= $usuarioLogueado["nombre"] ?></span>
+                    <span class="user-role"><?= $usuarioLogueado["rol"] ?></span>
                 </div>
                 <span class="user-chevron">▾</span>
             </div>
