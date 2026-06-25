@@ -21,8 +21,8 @@
             </div>
             
             <nav class="navbar-center">
-            <a href="productos.php" class="nav-link active">Productos</a>
-            <a href="mispedidos.php" class="nav-link">Mis pedidos</a>
+            <a href="productos.php" class="nav-link">Productos</a>
+            <a href="mispedidos.php" class="nav-link active">Mis pedidos</a>
             <a href="reportes.php" class="nav-link">Reportes</a>
             </nav>
             
